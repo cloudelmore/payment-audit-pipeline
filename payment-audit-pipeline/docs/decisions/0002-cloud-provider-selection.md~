@@ -1,0 +1,25 @@
+ADR 0002: Cloud provider selection
+Date: 2026-08-29 Status: Accepted
+Context
+This project requires a cloud provider for compute, storage, and the S3 Object Lock-based immutable audit trail. The builder is early in cloud engineering training, currently working through an AWS-specific degree track (WGU Cloud and Network Engineering), and has not yet developed working fluency in any other provider.
+The target market — Charlotte-area banking and fintech — is not single-vendor. Bank of America runs Azure-heavy; other institutions in the market are multi-cloud or AWS-leaning. Picking one provider for this project is not a claim that it is the only correct choice for the market — it is a scoping decision for what can be built well, by one engineer, at a beginner skill level, without the project's goal (a defensible audit trail) getting lost inside a larger problem.  This keeps the scope manageable while achieving a business solution that solves the problem.
+Decision
+This project will be built on AWS. No multi-cloud abstraction layer will be introduced.
+Alternatives considered
+Alternative A: Azure
+•	Pros: Many banks in the Charlotte market already run on Microsoft's ecosystem and have extensive infrastructure already in place including licensing agreements, which lowers integration friction for Azure specifically at many banks. Bank of America, one of the largest employers in the market, is Azure-heavy.
+•	Cons: No current working fluency with Azure. Learning a second cloud platform's IAM model, storage semantics, and compliance tooling at the same time as building a compliance-critical audit system introduces risk to the project without providing a benefit that cannot be addressed with a later project.
+•	Why not chosen: Deferred, not rejected. Azure fundamentals (AZ-900, then AZ-104) are already on the table for needed skills. Revisit this decision once that training is complete.
+Alternative B: Multi-cloud from the start (AWS + Azure)
+•	Pros: Could demonstrate the ability to pick the best-fit service from each platform rather than being constrained to one vendor.
+•	Cons: Significantly increases complexity, time to build, and most likely cost. Requires reasoning about two different immutability models (S3 Object Lock vs. Azure Immutable Blob Storage) before either one is understood individually. For a single beginner engineer, this is two projects, not one.
+•	Why not chosen: The complexity cost is paid immediately; the benefit (platform flexibility) isn't needed for a portfolio project with one clear business case. The tradeoff gets worse, not better, until a clear need arises.
+Alternative C: AWS (chosen)
+•	Pros: Direct overlap with current coursework (Terraform, AWS SAA, AWS CloudOps), meaning skill-building on this project reinforces certification study rather than competing with it. S3 Object Lock (compliance mode) is a direct, well-documented fit for the audit trail requirement. AWS holds the largest global cloud market share, which maximizes the pool of engineers and hiring managers who can evaluate this work without translation.
+•	Cons: Limits the specific businesses where this project is directly applicable, but proves the concept.
+•	Why chosen: Best match for current skill level, project timeline, and the specific technical requirement (S3 Object Lock).
+Consequences
+•	Bank of America and other Azure-primary employers are not directly addressable by this project's demonstrated skill set until Azure is added to the toolkit.  That would likely appear as a completely separate project.
+•	All infrastructure, IAM, and compliance tooling decisions in this project will be made in AWS-native terms (not cloud-agnostic abstractions) keeping scope reasonable for a single engineer.
+•	This decision will be revisited once Azure fundamentals (AZ-900/AZ-104) are complete not by retrofitting this project but for decision auditing and to address if another separate project is worth pursuing.
+
