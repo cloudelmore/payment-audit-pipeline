@@ -14,7 +14,7 @@ The hard part is answering an assessor who asks:
 > *"Show me every change to transaction 8842. Who made it, when, from where — and prove
 > to me the record has not been altered since."*
 
-In most environments that answer is assembled by hand from exported logs, screenshots, and
+In many environments that answer is assembled by hand from exported logs, screenshots, and
 spreadsheets, days after it was asked for. This project builds the system that answers it
 automatically, with evidence that stands on its own.
 
@@ -59,10 +59,11 @@ See [docs/local-development.md](docs/local-development.md).
 
 ## Why I built this
 
-I spent 25 years in aviation — as an A&P mechanic at United and PSA Airlines, then as an
-Army maintenance test pilot and aviation safety officer. In that world, the documentation
-*is* the compliance artifact. If a maintenance action is not recorded correctly, it did not
-legally happen, and a regulator can ask you to prove it years later.
+I spent 25 years in aviation — as an A&P mechanic at major airlines, then as an
+Army maintenance test pilot, aviation safety officer, and standardization pilot. I became very familiar with the process of 
+providing an auditable trail.
+In that world, the documentation *is* the compliance artifact. If a maintenance action is not recorded correctly, it did not
+legally happen, and a regulator can ask you to prove it years later.  The same goes for safety and training records.
 
 Financial services has the same requirement and the same failure mode. This project applies
-the discipline of one to the other.
+the discipline I learned at one to the other.
