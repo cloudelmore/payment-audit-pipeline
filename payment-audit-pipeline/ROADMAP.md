@@ -12,11 +12,11 @@ project was built deliberately, not dumped in one upload.
 **Skills: Git, Markdown, technical writing**
 **Prerequisite: none — start here today**
 
-- [ ] Create the remote repository and push this scaffold
-- [ ] Write a real `.gitignore` before the first code commit
-- [ ] Practice the branch → commit → pull request → merge cycle on a docs change
-- [ ] Write ADR 0002 recording your choice of cloud provider and why
-- [ ] Protect the `main` branch so changes must arrive by pull request
+- [x] Create the remote repository and push this scaffold
+- [x] Write a real `.gitignore` before the first code commit
+- [x] Practice the branch → commit → pull request → merge cycle on a docs change
+- [x] Write ADR 0002 recording your choice of cloud provider and why
+- [x] Protect the `main` branch so changes must arrive by pull request
 
 > **Why this stage matters:** this is where the change-control story starts. A repo where
 > everything was committed straight to `main` in one push tells a very different story than
